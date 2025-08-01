@@ -1,0 +1,132 @@
+{
+  "examples": {
+    "basic": {
+      "name": "Basic HTML with SSI Includes",
+      "description": "Tests Apache SSI include syntax with traditional HTML",
+      "source": "basic/src",
+      "output": "basic/dist",
+      "command": "unify build -s basic/src -o basic/dist",
+      "timeout": 30000,
+      "expectedFiles": [
+        "index.html",
+        "about.html", 
+        "getting-started.html",
+        "css/style.css",
+        "sitemap.xml"
+      ],
+      "validations": [
+        {
+          "type": "file-exists",
+          "files": ["index.html", "about.html", "getting-started.html", "sitemap.xml"]
+        },
+        {
+          "type": "content-includes",
+          "file": "index.html",
+          "mustContain": [
+            "<nav>",
+            "Unify",
+            "Why Choose Unify?"
+          ],
+          "mustNotContain": [
+            "<!--#include virtual=\"/includes/home-header.html\" -->"
+          ]
+        },
+        {
+          "type": "content-includes", 
+          "file": "about.html",
+          "mustContain": [
+            "<nav>",
+            "About Unify"
+          ]
+        }
+      ]
+    },
+    "markdown": {
+      "name": "Markdown with Layouts",
+      "description": "Tests markdown processing with layout system",
+      "source": "markdown/src",
+      "output": "markdown/dist", 
+      "command": "unify build -s markdown/src -o markdown/dist --pretty-urls",
+      "timeout": 30000,
+      "expectedFiles": [
+        "index.html",
+        "with-includes/index.html",
+        "sitemap.xml"
+      ],
+      "validations": [
+        {
+          "type": "file-exists",
+          "files": ["index.html", "sitemap.xml"]
+        },
+        {
+          "type": "content-includes",
+          "file": "index.html", 
+          "mustContain": [
+            "<title>Test Markdown Page</title>",
+            "<meta name=\"description\" content=\"A test page to verify markdown processing\">",
+            "<main>",
+            "</main>"
+          ],
+          "mustNotContain": [
+            "---",
+            "title: \"Test Markdown Page\"",
+            "```javascript"
+          ]
+        }
+      ]
+    },
+    "advanced": {
+      "name": "DOM Mode with Layouts and Components",
+      "description": "Tests DOM mode with advanced templating features",
+      "source": "advanced/src",
+      "output": "advanced/dist",
+      "command": "unify build -s advanced/src -o advanced/dist", 
+      "timeout": 30000,
+      "expectedFiles": [
+        "index.html",
+        "about.html",
+        "styles/site.css",
+        "sitemap.xml"
+      ],
+      "validations": [
+        {
+          "type": "file-exists",
+          "files": ["index.html", "about.html", "styles/site.css", "sitemap.xml"]
+        },
+        {
+          "type": "content-includes",
+          "file": "index.html",
+          "mustContain": [
+            "<title>Welcome to DOM Mode</title>",
+            "<h1>🧱 Unify DOM Mode</h1>",
+            "Modern templating with pure HTML",
+            "<h2>Hello!</h2>",
+            "This is a blog post rendered with the Unify DOM Mode layout engine",
+            "<h3>Components Example</h3>",
+            "Here are some reusable components:",
+            "Built with Unify DOM Mode"
+          ],
+          "mustNotContain": [
+            "data-layout=\"/layouts/blog.html\"",
+            "<template data-slot=",
+            "<include src="
+          ]
+        },
+        {
+          "type": "content-includes",
+          "file": "about.html", 
+          "mustContain": [
+            "<title>About DOM Mode</title>",
+            "DOM Mode is a modern templating system for Unify"
+          ]
+        }
+      ]
+    }
+  },
+  "global": {
+    "cliPath": "../cli/bin/cli.js",
+    "tempDir": "tmp-e2e-tests",
+    "repoUrl": "https://github.com/unify/examples.git",
+    "defaultTimeout": 30000
+  }
+}
