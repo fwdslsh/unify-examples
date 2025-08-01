@@ -5,7 +5,7 @@ Thank you for your interest in contributing to the unify examples repository! Th
 ## Prerequisites
 
 - Node.js 18+
-- unify CLI: `npm install -g @unify/cli`
+- unify CLI: `npm install -g @fwdslsh/unify`
 - Basic understanding of HTML, CSS, and unify concepts
 
 ## Adding a New Example
@@ -233,8 +233,8 @@ All examples must:
 
 ## Getting Help
 
-- 📖 [Main unify Documentation](https://github.com/unify/cli/docs)
+- 📖 [Main unify Documentation](https://github.com/fwdslsh/unify/docs)
 - 🐛 [Report Issues](https://github.com/unify/examples/issues)
-- 💬 [Ask Questions](https://github.com/unify/cli/discussions)
+- 💬 [Ask Questions](https://github.com/fwdslsh/unify/discussions)
 
 Thank you for contributing to make unify examples better for everyone! 🙌
