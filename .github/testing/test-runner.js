@@ -21,10 +21,17 @@ const __dirname = path.dirname(__filename);
 
 class TestRunner {
   constructor() {
-    this.config = JSON.parse(fs.readFileSync('test-config.json', 'utf8'));
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    const configPath = path.join(__dirname, 'test-config.json');
+    this.config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
     this.verbose = process.argv.includes('--verbose');
     this.testResults = {};
     this.startTime = Date.now();
+    
+    // Change to repository root for running commands
+    const repoRoot = path.resolve(__dirname, '../..');
+    process.chdir(repoRoot);
   }
 
   log(message, level = 'info') {
@@ -189,14 +196,14 @@ class TestRunner {
         ? exampleConfig.command 
         : exampleConfig.command.replace('unify', `node ${path.resolve(__dirname, cliPath)}`);
       
-      await this.runCommand(command, __dirname, exampleConfig.timeout);
+      await this.runCommand(command, process.cwd(), exampleConfig.timeout);
       testResult.buildPassed = true;
       testResult.buildTime = Date.now() - buildStart;
       
       this.log(`Build completed in ${testResult.buildTime}ms`, 'success');
 
       // Validate outputs
-      const outputPath = path.join(__dirname, exampleConfig.output);
+      const outputPath = path.join(process.cwd(), exampleConfig.output);
       const validationResults = await this.validateFile(outputPath, exampleConfig.validations);
       
       testResult.validationResults = validationResults;

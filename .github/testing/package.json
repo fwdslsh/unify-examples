@@ -1,0 +1,26 @@
+{
+  "name": "unify-examples-testing",
+  "version": "1.0.0",
+  "description": "Testing infrastructure for unify static site generator examples",
+  "type": "module",
+  "scripts": {
+    "build-all": "bash build-all.sh",
+    "clean-all": "bash clean-all.sh",
+    "test": "bash validate-examples.sh",
+    "test:verbose": "bash validate-examples.sh --verbose"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "chalk": "^5.3.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["unify", "static-site-generator", "examples", "templates", "ssg", "testing"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fwdslsh/unify-examples.git"
+  },
+  "license": "Apache-2.0"
+}

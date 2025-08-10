@@ -1,9 +1,14 @@
 #!/bin/bash
 
 # Clean all unify example dist directories
-# Usage: ./clean-all.sh
+# Usage: ./.github/testing/clean-all.sh
 
 echo "🧹 Cleaning all example dist directories..."
+
+# Get the directory of this script and navigate to repo root
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(dirname "$(dirname "$SCRIPT_DIR")")"
+cd "$REPO_ROOT"
 
 # Remove dist directories
 if [ -d "basic/dist" ]; then

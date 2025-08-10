@@ -50,9 +50,9 @@ unify build -s my-new-example/src -o my-new-example/dist
 Explain the key concepts...
 ```
 
-### 4. Update Test Configuration
+### 4. Update Test Configuration (For Advanced Contributors)
 
-Add your example to `test-config.json`:
+If you want to add automated validation for your example, update `.github/testing/test-config.json`:
 
 ```json
 "my-new-example": {
@@ -81,18 +81,20 @@ Add your example to `test-config.json`:
 }
 ```
 
+Note: This step is optional and primarily used for release validation. Focus on creating a working example first.
+
 ### 5. Update Build Scripts
 
 Add your example to the build scripts:
 
-**`build-all.sh`**:
+**`.github/testing/build-all.sh`**:
 ```bash
 # My new example
 echo "📦 Building my-new-example..."
 node "$CLI_PATH" build -s my-new-example/src -o my-new-example/dist
 ```
 
-**`clean-all.sh`**:
+**`.github/testing/clean-all.sh`**:
 ```bash
 if [ -d "my-new-example/dist" ]; then
     rm -rf my-new-example/dist
@@ -123,23 +125,25 @@ unify build -s my-new-example/src -o my-new-example/dist
 
 ```bash
 # Build your example
-./build-all.sh
+./.github/testing/build-all.sh
 
 # Clean outputs  
-./clean-all.sh
+./.github/testing/clean-all.sh
 
 # Test individual build
 unify build -s my-new-example/src -o my-new-example/dist
 ```
 
-### 2. Automated Testing
+### 2. Validation Testing (For Advanced Contributors)
+
+For contributors who want to validate their examples against the testing infrastructure:
 
 ```bash
-# Run the full test suite
-npm test
+# Run the validation tests from repository root
+bash .github/testing/validate-examples.sh
 
 # Run with verbose output
-npm run test:verbose
+bash .github/testing/validate-examples.sh --verbose
 ```
 
 Your example should:
@@ -147,6 +151,8 @@ Your example should:
 - ✅ Generate expected output files  
 - ✅ Pass all content validations
 - ✅ Complete within timeout limits
+
+Note: These tests are automatically run during releases to validate examples against the latest unify version. For regular development, manual testing is usually sufficient.
 
 ## Guidelines
 
@@ -215,7 +221,7 @@ All examples must:
 - Verify unify command syntax
 
 ### Validation Failures  
-- Update `test-config.json` with realistic expectations
+- Update `.github/testing/test-config.json` with realistic expectations
 - Check that expected content is actually generated
 - Remove overly specific content checks that might break
 
