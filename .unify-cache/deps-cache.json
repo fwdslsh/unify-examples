@@ -1,0 +1,20 @@
+{
+  "/home/runner/work/unify-examples/unify-examples/basic/src/getting-started.html": [
+    "/home/runner/work/unify-examples/unify-examples/basic/src/includes/header.html",
+    "/home/runner/work/unify-examples/unify-examples/basic/src/includes/footer.html"
+  ],
+  "/home/runner/work/unify-examples/unify-examples/basic/src/about.html": [
+    "/home/runner/work/unify-examples/unify-examples/basic/src/includes/header.html",
+    "/home/runner/work/unify-examples/unify-examples/basic/src/includes/footer.html"
+  ],
+  "/home/runner/work/unify-examples/unify-examples/basic/src/index.html": [
+    "/home/runner/work/unify-examples/unify-examples/basic/src/includes/home-header.html",
+    "/home/runner/work/unify-examples/unify-examples/basic/src/includes/footer.html"
+  ],
+  "/home/runner/work/unify-examples/unify-examples/advanced/src/about.html": [
+    "/home/runner/work/unify-examples/unify-examples/advanced/src/layouts/default.html"
+  ],
+  "/home/runner/work/unify-examples/unify-examples/advanced/src/index.html": [
+    "/home/runner/work/unify-examples/unify-examples/advanced/src/layouts/blog.html"
+  ]
+}
