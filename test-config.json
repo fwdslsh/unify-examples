@@ -124,9 +124,9 @@
     }
   },
   "global": {
-    "cliPath": "../cli/bin/cli.js",
+    "cliPath": "unify",
     "tempDir": "tmp-e2e-tests",
-    "repoUrl": "https://github.com/unify/examples.git",
+    "repoUrl": "https://github.com/fwdslsh/unify-examples.git",
     "defaultTimeout": 30000
   }
 }

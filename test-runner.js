@@ -182,8 +182,12 @@ class TestRunner {
     try {
       // Build the example
       const buildStart = Date.now();
-      const cliPath = path.resolve(__dirname, this.config.global.cliPath);
-      const command = exampleConfig.command.replace('unify', `node ${cliPath}`);
+      const cliPath = this.config.global.cliPath;
+      
+      // If cliPath is just "unify", use the command as-is, otherwise replace with node
+      const command = cliPath === 'unify' 
+        ? exampleConfig.command 
+        : exampleConfig.command.replace('unify', `node ${path.resolve(__dirname, cliPath)}`);
       
       await this.runCommand(command, __dirname, exampleConfig.timeout);
       testResult.buildPassed = true;
