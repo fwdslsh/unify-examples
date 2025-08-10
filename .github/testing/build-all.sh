@@ -1,11 +1,16 @@
 #!/bin/bash
 
 # Build all unify examples
-# Usage: ./build-all.sh
+# Usage: ./.github/testing/build-all.sh
 
 set -e
 
 echo "🚀 Building all unify examples..."
+
+# Get the directory of this script and navigate to repo root
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(dirname "$(dirname "$SCRIPT_DIR")")"
+cd "$REPO_ROOT"
 
 # Basic example
 echo "📦 Building basic example..."

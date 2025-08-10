@@ -87,14 +87,14 @@ Note: This step is optional and primarily used for release validation. Focus on 
 
 Add your example to the build scripts:
 
-**`build-all.sh`**:
+**`.github/testing/build-all.sh`**:
 ```bash
 # My new example
 echo "📦 Building my-new-example..."
 node "$CLI_PATH" build -s my-new-example/src -o my-new-example/dist
 ```
 
-**`clean-all.sh`**:
+**`.github/testing/clean-all.sh`**:
 ```bash
 if [ -d "my-new-example/dist" ]; then
     rm -rf my-new-example/dist
@@ -125,10 +125,10 @@ unify build -s my-new-example/src -o my-new-example/dist
 
 ```bash
 # Build your example
-./build-all.sh
+./.github/testing/build-all.sh
 
 # Clean outputs  
-./clean-all.sh
+./.github/testing/clean-all.sh
 
 # Test individual build
 unify build -s my-new-example/src -o my-new-example/dist

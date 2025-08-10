@@ -17,6 +17,7 @@ jobs:
       with:
         node-version: '18'
         cache: 'npm'
+        cache-dependency-path: '.github/testing/package-lock.json'
         
     - name: Install Bun runtime
       run: |
@@ -34,7 +35,9 @@ jobs:
       run: npm install -g @fwdslsh/unify@${{ steps.unify-version.outputs.version }}
       
     - name: Install dependencies
-      run: npm install
+      run: |
+        cd .github/testing
+        npm install
       
     - name: Validate examples against latest unify
       run: bash .github/testing/validate-examples.sh

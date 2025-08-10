@@ -15,8 +15,7 @@ Before running these examples, you need:
 ### Option 1: Build All Examples
 ```bash
 git clone https://github.com/fwdslsh/unify-examples && cd unify-examples
-npm install
-./build-all.sh
+./.github/testing/build-all.sh
 ```
 
 ### Option 2: Run Individual Examples  
@@ -71,8 +70,11 @@ unify serve -s advanced/src -o advanced/dist
 
 ## Testing & Validation
 
+For advanced users who want to validate the examples, testing infrastructure is available in `.github/testing/`.
+
 ### Run E2E Tests
 ```bash
+cd .github/testing
 npm install
 npm test              # Run all validation tests
 npm run test:verbose  # Run with detailed output
@@ -80,9 +82,9 @@ npm run test:verbose  # Run with detailed output
 
 ### Manual Testing
 ```bash
-./validate-examples.sh           # Run automated tests
-./build-all.sh                   # Build all examples
-./clean-all.sh                   # Clean all dist directories
+./.github/testing/validate-examples.sh  # Run automated tests
+./.github/testing/build-all.sh          # Build all examples
+./.github/testing/clean-all.sh          # Clean all dist directories
 ```
 
 ## Preview Built Sites
@@ -121,7 +123,7 @@ npx @fwdslsh/unify build -s src -o dist
 **Permission denied on scripts**
 ```bash
 # Make scripts executable
-chmod +x build-all.sh clean-all.sh
+chmod +x .github/testing/build-all.sh .github/testing/clean-all.sh
 ```
 
 ### Getting Help
