@@ -7,13 +7,14 @@ This repository contains working examples demonstrating different features and u
 Before running these examples, you need:
 
 - **Node.js 18+** installed
+- **Bun runtime** installed: `curl -fsSL https://bun.sh/install | bash`
 - **unify CLI** installed: `npm install -g @fwdslsh/unify`
 
 ## Quick Start
 
 ### Option 1: Build All Examples
 ```bash
-git clone https://github.com/unify/examples && cd examples
+git clone https://github.com/fwdslsh/unify-examples && cd unify-examples
 npm install
 ./build-all.sh
 ```
@@ -106,6 +107,10 @@ Visit `http://localhost:3000` to view the built site.
 
 **Build fails with "command not found"**
 ```bash
+# Install Bun runtime first
+curl -fsSL https://bun.sh/install | bash
+source ~/.bashrc
+
 # Install unify CLI globally
 npm install -g @fwdslsh/unify
 
@@ -127,7 +132,7 @@ npm test
 
 ### Getting Help
 
-- 📖 [Main unify Documentation](https://github.com/fwdslsh/unify/docs)
+- 📖 [Main unify Documentation](https://github.com/fwdslsh/unify/blob/main/docs)
 - 🐛 [Report Issues](https://github.com/fwdslsh/unify/issues)
 
 ## Contributing

@@ -101,15 +101,6 @@ The build should generate:
 - `dist/with-includes/index.html` - Second page (with pretty URLs)
 - `dist/sitemap.xml` - Generated sitemap
 
-## Current Limitations
-
-⚠️ **Known Issues** (as identified by E2E tests):
-- Content may not be inserted into layout slots correctly
-- Component includes may not process fully
-- Token replacement is partial
-
-These represent areas for improvement in the unify implementation.
-
 ## Validation
 
 This example is tested by the E2E test suite:
