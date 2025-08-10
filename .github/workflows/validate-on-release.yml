@@ -1,0 +1,52 @@
+name: Validate Examples on Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  validate-examples:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install Bun runtime
+      run: |
+        curl -fsSL https://bun.sh/install | bash
+        echo "$HOME/.bun/bin" >> $GITHUB_PATH
+        
+    - name: Get latest unify version from npm
+      id: unify-version
+      run: |
+        LATEST_VERSION=$(npm view @fwdslsh/unify version)
+        echo "version=$LATEST_VERSION" >> $GITHUB_OUTPUT
+        echo "Installing unify version: $LATEST_VERSION"
+        
+    - name: Install latest unify CLI from npm
+      run: npm install -g @fwdslsh/unify@${{ steps.unify-version.outputs.version }}
+      
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Validate examples against latest unify
+      run: bash .github/testing/validate-examples.sh
+      
+    - name: Report validation results
+      if: success()
+      run: |
+        echo "✅ All examples validated successfully against unify v${{ steps.unify-version.outputs.version }}"
+        
+    - name: Report validation failure
+      if: failure()
+      run: |
+        echo "❌ Example validation failed against unify v${{ steps.unify-version.outputs.version }}"
+        echo "This indicates the examples may need updates to work with the latest unify version."
+        exit 1

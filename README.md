@@ -121,13 +121,7 @@ npx @fwdslsh/unify build -s src -o dist
 **Permission denied on scripts**
 ```bash
 # Make scripts executable
-chmod +x build-all.sh clean-all.sh validate-examples.sh
-```
-
-**Examples don't build correctly**
-```bash
-# Run validation tests to identify issues
-npm test
+chmod +x build-all.sh clean-all.sh
 ```
 
 ### Getting Help
@@ -141,8 +135,9 @@ To add a new example:
 
 1. Create a new directory with `src/` and `dist/` folders
 2. Add your source files to `src/`
-3. Update `test-config.json` with validation rules
-4. Update this README with the new example
-5. Test with `npm test`
+3. Update the example's README with usage instructions
+4. Test the example builds correctly with unify
+
+For advanced users and contributors who need to run validation tests, see **[.github/testing/README.md](.github/testing/README.md)**.
 
 See **[CONTRIBUTING.md](CONTRIBUTING.md)** for detailed guidelines.

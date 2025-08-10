@@ -1,14 +1,11 @@
 {
-  "name": "unify-examples-e2e-tests",
+  "name": "unify-examples",
   "version": "1.0.0",
-  "description": "End-to-end tests for unify examples",
+  "description": "Working examples for the unify static site generator",
   "type": "module",
   "scripts": {
-    "test": "node test-runner.js",
-    "test:verbose": "node test-runner.js --verbose",
     "build-all": "bash build-all.sh",
-    "clean-all": "bash clean-all.sh",
-    "validate": "bash validate-examples.sh"
+    "clean-all": "bash clean-all.sh"
   },
   "dependencies": {
     "fs-extra": "^11.1.1",
@@ -17,5 +14,11 @@
   "devDependencies": {},
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "keywords": ["unify", "static-site-generator", "examples", "templates", "ssg"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fwdslsh/unify-examples.git"
+  },
+  "license": "Apache-2.0"
 }
