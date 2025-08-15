@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <style>
+    @view-transition { navigation: auto; }
+    @scope (#catalog) {
+      :scope h1, :scope h2 { color: rebeccapurple; }
+      :scope a { color: rebeccapurple; }
+      :scope .hero { padding: 2rem 1.25rem; border-radius: 12px; background: #f1e9ff; }
+    }
+  </style>
+  <title><slot name="title">Catalog – Content Catalogs</slot></title>
+  <meta name="description" content="<slot name='description'>Organize docs for AI agents.</slot>">
+</head>
+<body data-section="catalog">
+  <header class="container">
+    <nav>
+      <ul>
+        <li><a href="/" data-section="home">Home</a></li>
+        <li><a href="/unify/" data-section="unify">Unify</a></li>
+        <li><a href="/giv/" data-section="giv">Giv</a></li>
+        <li><a href="/inform/" data-section="inform">Inform</a></li>
+        <li><a href="/catalog/" data-section="catalog">Catalog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container" id="catalog">
+    <section class="hero">
+      <slot name="hero">
+        <h1 style="view-transition-name: catalog-hero">Catalog</h1>
+        <p>Generate content catalogs for AI workflows.</p>
+      </slot>
+    </section>
+
+    <slot></slot>
+  </main>
+
+  <footer class="container">
+    <hr />
+    <p>Part of the Fwdslsh toolchain.</p>
+  </footer>
+</body>
+</html>
