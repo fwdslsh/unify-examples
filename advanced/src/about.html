@@ -1,28 +1,28 @@
-<body data-layout="/layouts/default.html">
-  <template target="title">About DOM Mode</template>
-  <template target="header">
+<body>
+  <template slot="title">About DOM Mode</template>
+  <template slot="header">
     <h1>About DOM Mode</h1>
-    <include src="/components/navigation.html" />
+    <include src="/_includes/navigation.html" />
   </template>
 
   <h2>What is DOM Mode?</h2>
   <p>DOM Mode is a modern templating system for Unify that uses pure HTML with minimal custom elements.</p>
 
-  <include src="/components/alert.html"
+  <include src="/_includes/alert.html"
            data-title="Modern Approach"
            data-message="No templating language to learn - just HTML with slots and includes!" />
 
   <h3>Key Features</h3>
   
-  <include src="/components/card.html"
+  <include src="/_includes/card.html"
            data-title="🧩 Components"
            data-content="Reusable HTML components." />
 
-  <include src="/components/card.html"
+  <include src="/_includes/card.html"
            data-title="🎯 Layouts"
            data-content="Layout system with named and unnamed slots for flexible page composition." />
 
-  <include src="/components/card.html"
+  <include src="/_includes/card.html"
            data-title="🔧 Zero Config"
            data-content="Conventional file structure means no configuration files needed." />
 

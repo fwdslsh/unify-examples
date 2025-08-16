@@ -3,7 +3,7 @@ title: "Markdown with Includes"
 description: "Testing Apache-style includes in markdown"
 ---
 
-<!--#include virtual=".components/header.html" -->
+<!--#include virtual="_includes/header.html" -->
 
 ## Content Section
 

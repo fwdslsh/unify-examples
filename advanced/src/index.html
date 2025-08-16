@@ -1,6 +1,6 @@
-<body data-layout="/layouts/blog.html">
-  <template target="title">Welcome to DOM Mode</template>
-  <template target="header">
+<body data-layout="blog">
+  <template slot="title">Welcome to DOM Mode</template>
+  <template slot="header">
     <h1>🧱 Unify DOM Mode</h1>
     <p>Modern templating with pure HTML</p>
   </template>
@@ -8,14 +8,14 @@
   <h2>Hello!</h2>
   <p>This is a blog post rendered with the Unify DOM Mode layout engine. This content goes into the unnamed slot.</p>
 
-  <include src="/components/alert.html" />
+  <include src="/_includes/alert.html" />
 
   <h3>Components Example</h3>
   <p>Here are some reusable components:</p>
 
-  <include src="/components/card.html" />
+  <include src="/_includes/card.html" />
 
-  <template target="footer">
+  <template slot="footer">
     <p>© 2025 - Built with Unify DOM Mode</p>
     <p><a href="https://github.com/yourusername/unify">View on GitHub</a></p>
   </template>

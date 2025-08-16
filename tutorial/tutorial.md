@@ -390,10 +390,10 @@ unify watch
 
 Unify follows simple conventions:
 
-- **`src/`**: Source files (configurable with `--source`)
+- **`src/`**: Source files (configurable with `--source`, defaults to `src`)
 - **`_includes/`**: Shared components and layouts (non-emitting)
 - **`_layout.html`**: Layout files (underscore prefix excludes from output)
-- **`dist/`**: Generated static site (configurable with `--output`)
+- **`dist/`**: Generated static site (configurable with `--output`, defaults to `dist`)
 
 ## Common Commands
 

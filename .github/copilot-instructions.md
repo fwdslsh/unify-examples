@@ -141,9 +141,8 @@ basic/markdown/advanced/
 ├── src/               # Source files
 │   ├── index.html     # Entry point
 │   ├── includes/      # Components (basic only)
-│   ├── .layouts/      # Layout templates (markdown only)
+│   ├── _includes/     # Layouts and components (preferred convention)
 │   ├── layouts/       # Layout templates (advanced only)
-│   ├── .components/   # Components (markdown only)
 │   ├── components/    # Components (advanced only)
 │   └── styles/        # CSS files
 └── dist/              # Generated output (created during build)

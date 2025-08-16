@@ -25,7 +25,7 @@ mkdir -p src dist
 Add your example files to the `src/` directory following unify conventions:
 
 - **Basic examples**: Use `<!--#include virtual="/path" -->` syntax
-- **Markdown examples**: Use `.layouts/` and `.components/` directories  
+- **Markdown examples**: Use `_includes/` directory with layout.html  
 - **Advanced examples**: Use `layouts/`, `components/`, and DOM mode features
 
 ### 3. Add a README
@@ -177,8 +177,7 @@ my-example/
 ├── README.md              # Detailed documentation
 ├── src/                   # Source files
 │   ├── index.html        # Entry point
-│   ├── .layouts/         # Layout templates (if needed)
-│   ├── .components/      # Reusable components (if needed)
+│   ├── _includes/        # Layouts and components
 │   └── assets/           # CSS, images, etc.
 └── dist/                 # Build output (auto-generated)
 ```

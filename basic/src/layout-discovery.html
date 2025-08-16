@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="layout" href="simple">
+  <template slot="head">
+    <title>Layout Discovery Example - Unify</title>
+    <meta name="description" content="Demonstrating Unify's layout discovery with link rel=layout">
+  </template>
+</head>
+<body>
+  <h1>🔗 Layout Discovery Example</h1>
+  
+  <p>This page uses the <code>&lt;link rel="layout" href="simple"&gt;</code> element to specify a custom layout using short name discovery.</p>
+  
+  <h2>How It Works</h2>
+  <ol>
+    <li>The <code>&lt;link rel="layout" href="simple"&gt;</code> element tells Unify to look for a layout named "simple"</li>
+    <li>Unify searches for <code>_simple.layout.html</code> in the <code>_includes/</code> directory</li>
+    <li>The layout provides the overall page structure with <code>data-slot</code> placeholders</li>
+    <li>This page content fills the slots using <code>&lt;template slot="..."&gt;</code> elements</li>
+  </ol>
+  
+  <h2>Benefits</h2>
+  <ul>
+    <li><strong>Explicit control</strong>: Choose exactly which layout to use per page</li>
+    <li><strong>Short names</strong>: Use simple names instead of full file paths</li>
+    <li><strong>Standard HTML</strong>: Uses familiar <code>&lt;link&gt;</code> element syntax</li>
+    <li><strong>Fallback support</strong>: Layouts can include default content for slots</li>
+  </ul>
+  
+  <div style="background: #e3f2fd; padding: 20px; border-radius: 4px; margin: 20px 0;">
+    <h3>💡 Try This</h3>
+    <p>Look at the source of this file and <code>_includes/simple.layout.html</code> to see how the layout discovery system works!</p>
+  </div>
+</body>
+</html>

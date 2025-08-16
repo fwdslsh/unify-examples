@@ -9,16 +9,15 @@ This example demonstrates unify's markdown processing capabilities with layouts,
 - ✅ **Layout system** - Templates in `.layouts/` directory
 - ✅ **Token replacement** - `{{ variable }}` substitution
 - ✅ **Pretty URLs** - `index.md` becomes `index.html`
-- ✅ **Components** - Reusable HTML snippets in `.components/`
+- ✅ **Components** - Reusable HTML snippets in `_includes/`
 
 ## Project Structure
 
 ```
 markdown/
 ├── src/
-│   ├── .layouts/
-│   │   └── default.html        # Page layout template
-│   ├── .components/  
+│   ├── _includes/
+│   │   ├── layout.html         # Page layout template
 │   │   └── footer.html         # Footer component
 │   ├── index.md                # Homepage (markdown)
 │   └── with-includes.md        # Page with component includes
@@ -80,8 +79,8 @@ The layout in `.layouts/default.html` receives:
 ## Key Files
 
 **`src/index.md`** - Homepage with frontmatter and markdown content  
-**`src/.layouts/default.html`** - Layout template with token placeholders  
-**`src/.components/footer.html`** - Reusable footer component  
+**`src/_includes/layout.html`** - Layout template with slot placeholders  
+**`src/_includes/footer.html`** - Reusable footer component  
 **`src/with-includes.md`** - Demonstrates component includes in markdown
 
 ## Preview
