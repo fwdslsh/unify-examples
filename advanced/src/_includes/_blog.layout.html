@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><div data-slot="title">My Blog</div></title>
+    <title><slot name="title">My Blog</slot></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/site.css">
@@ -31,15 +31,15 @@
   </head>
   <body class="blog-layout">
     <header class="blog-header">
-      <div data-slot="header"><h1>My Blog</h1></div>
+      <slot name="header"><h1>My Blog</h1></slot>
     </header>
     <main class="blog-content">
-      <div data-slot="content"></div> <!-- Main blog content -->
+      <slot name="content"></slot> <!-- Main blog content -->
     </main>
     <footer class="blog-footer">
-      <div data-slot="footer">
+      <slot name="footer">
         <p>Built with Unify DOM Mode</p>
-      </div>
+      </slot>
     </footer>
   </body>
 </html>

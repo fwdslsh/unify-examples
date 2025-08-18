@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <div data-slot="head"></div>
+  <slot name="head"></slot>
   <style>
     body { 
       font-family: Arial, sans-serif; 
@@ -22,10 +22,10 @@
 </head>
 <body>
   <div class="simple-layout">
-    <div data-slot="content"></div>
+    <slot name="content"></slot>
     <main>
       <!-- This provides a fallback for pages without explicit slot content -->
-      <div data-slot="default"></div>
+      <slot name="default"></slot>
     </main>
   </div>
 </body>

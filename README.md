@@ -25,7 +25,7 @@ See the sections below for specific instructions for each example.
 
 ### 📄 Basic HTML Site (`/basic`)
 
-**Features**: Apache SSI includes, traditional HTML structure  
+**Features**: Apache SSI includes (legacy syntax), traditional HTML structure  
 **Best for**: Simple sites migrating from Apache SSI
 
 ```bash
@@ -55,7 +55,7 @@ unify serve -s markdown/src -o markdown/dist --pretty-urls
 
 ### 🧱 Advanced Templating (`/advanced`)
 
-**Features**: DOM mode, layouts, slots, components, token replacement  
+**Features**: DOM mode with v0.6.0 syntax, layouts, slots, components, token replacement  
 **Best for**: Complex sites with reusable components
 
 ```bash

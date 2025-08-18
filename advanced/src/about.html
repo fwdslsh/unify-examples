@@ -1,39 +1,39 @@
 <body>
-  <template slot="title">About DOM Mode</template>
-  <template slot="header">
+  <template data-target="title">About DOM Mode</template>
+  <template data-target="header">
     <h1>About DOM Mode</h1>
-    <include src="/_includes/navigation.html" />
+    <div data-import="/_includes/navigation.html"></div>
   </template>
 
   <h2>What is DOM Mode?</h2>
   <p>DOM Mode is a modern templating system for Unify that uses pure HTML with minimal custom elements.</p>
 
-  <include src="/_includes/alert.html"
-           data-title="Modern Approach"
-           data-message="No templating language to learn - just HTML with slots and includes!" />
+  <div data-import="/_includes/alert.html"
+       data-title="Modern Approach"
+       data-message="No templating language to learn - just HTML with slots and includes!"></div>
 
   <h3>Key Features</h3>
   
-  <include src="/_includes/card.html"
-           data-title="🧩 Components"
-           data-content="Reusable HTML components." />
+  <div data-import="/_includes/card.html"
+       data-title="🧩 Components"
+       data-content="Reusable HTML components."></div>
 
-  <include src="/_includes/card.html"
-           data-title="🎯 Layouts"
-           data-content="Layout system with named and unnamed slots for flexible page composition." />
+  <div data-import="/_includes/card.html"
+       data-title="🎯 Layouts"
+       data-content="Layout system with named and unnamed slots for flexible page composition."></div>
 
-  <include src="/_includes/card.html"
-           data-title="🔧 Zero Config"
-           data-content="Conventional file structure means no configuration files needed." />
+  <div data-import="/_includes/card.html"
+       data-title="🔧 Zero Config"
+       data-content="Conventional file structure means no configuration files needed."></div>
 
   <h3>How It Works</h3>
   <ol>
-    <li>Pages specify layouts with <code>data-layout</code></li>
-    <li>Content goes into slots using <code>&lt;template target="name"&gt;</code></li>
-    <li>Components are included with <code>&lt;include src="..." /&gt;</code></li>
+    <li>Pages specify layouts with <code>data-import</code></li>
+    <li>Content goes into slots using <code>&lt;template data-target="name"&gt;</code></li>
+    <li>Components are included with <code>&lt;div data-import="..." /&gt;</code></li>
   </ol>
 
-  <template target="footer">
+  <template data-target="footer">
     <p>Learn more about <a href="/">DOM Mode</a></p>
   </template>
 </body>
