@@ -2,8 +2,8 @@
 title: Catalog – Getting Started
 ---
 
-<template slot="title">Catalog – Getting Started</template>
-<template slot="description">Generate AI-friendly content catalogs from documentation directories.</template>
+<template data-target="title">Catalog – Getting Started</template>
+<template data-target="description">Generate AI-friendly content catalogs from documentation directories.</template>
 
 ## Installation
 

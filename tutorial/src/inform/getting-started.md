@@ -2,8 +2,8 @@
 title: Inform – Getting Started
 ---
 
-<template slot="title">Inform – Getting Started</template>
-<template slot="description">Start crawling websites and converting to Markdown in minutes.</template>
+<template data-target="title">Inform – Getting Started</template>
+<template data-target="description">Start crawling websites and converting to Markdown in minutes.</template>
 
 ## Installation
 

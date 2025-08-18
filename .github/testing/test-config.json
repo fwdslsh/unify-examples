@@ -107,9 +107,9 @@
             "Built with Unify DOM Mode"
           ],
           "mustNotContain": [
-            "data-layout=\"/layouts/blog.html\"",
-            "<template data-slot=",
-            "<include src="
+            "data-import=\"/_includes/_blog.layout.html\"",
+            "<template data-target=",
+            "<div data-import="
           ]
         },
         {

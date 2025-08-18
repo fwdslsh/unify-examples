@@ -4,9 +4,9 @@ This example demonstrates unify's advanced DOM Mode templating system using pure
 
 ## Features Demonstrated
 
-- ✅ **DOM Mode layouts** - `data-layout` attribute  
-- ✅ **Slot system** - `<template target="name">` content insertion
-- ✅ **Component includes** - `<include src="path">` with data attributes
+- ✅ **DOM Mode layouts** - `data-import` attribute  
+- ✅ **Slot system** - `<template data-target="name">` content insertion
+- ✅ **Component includes** - `<div data-import="path">` with data attributes
 - ✅ **Token replacement** - `data-token` attribute processing  
 - ✅ **CSS bundling** - Component styles are automatically included
 - ✅ **Asset copying** - Static files copied to output
@@ -26,28 +26,27 @@ unify serve -s advanced/src -o advanced/dist
 ```
 advanced/
 ├── src/
-│   ├── layouts/
-│   │   ├── blog.html           # Blog layout template
-│   │   └── default.html        # Default layout template  
-│   ├── components/
-│   │   ├── alert.html          # Alert component with styling
-│   │   ├── card.html           # Card component with styling
-│   │   └── navigation.html     # Navigation component
+│   ├── _includes/
+│   │   ├── _blog.layout.html     # Blog layout template
+│   │   ├── alert.html            # Alert component with styling
+│   │   ├── card.html             # Card component with styling
+│   │   └── navigation.html       # Navigation component
 │   ├── styles/
-│   │   └── site.css           # Global site styles
-│   ├── index.html             # Homepage using blog layout
-│   └── about.html             # About page using default layout
-└── dist/                      # Generated static site
+│   │   └── site.css             # Global site styles
+│   ├── _layout.html             # Default layout template
+│   ├── index.html               # Homepage using blog layout
+│   └── about.html               # About page using default layout
+└── dist/                        # Generated static site
 ```
 
 ## How It Works
 
 ### 1. Layout System
 
-Pages specify their layout using the `data-layout` attribute:
+Pages specify their layout using the `data-import` attribute:
 
 ```html
-<body data-layout="/layouts/blog.html">
+<body data-import="/_includes/_blog.layout.html">
   <!-- Page content goes here -->
 </body>
 ```
@@ -58,8 +57,8 @@ Content is inserted into layouts using named slots:
 
 **In the page:**
 ```html
-<template target="title">Welcome to DOM Mode</template>
-<template target="header">
+<template data-target="title">Welcome to DOM Mode</template>
+<template data-target="header">
   <h1>🧱 Unify DOM Mode</h1>
   <p>Modern templating with pure HTML</p>
 </template>
@@ -77,12 +76,12 @@ Content is inserted into layouts using named slots:
 Include reusable components with data:
 
 ```html
-<include src="/components/card.html"
-         data-title="🎯 Features"
-         data-content="DOM Mode supports layouts and components." />
+<div data-import="/_includes/card.html"
+     data-title="🎯 Features"
+     data-content="DOM Mode supports layouts and components."></div>
 ```
 
-**Component template (`components/card.html`):**
+**Component template (`_includes/card.html`):**
 ```html
 <div class="card">
   <h3 data-token="title">Default Title</h3>
@@ -99,7 +98,7 @@ Include reusable components with data:
 
 1. **Scan** - Find all HTML files and their layouts
 2. **Process** - Apply layouts and fill slots with content
-3. **Include** - Replace `<include>` tags with component content  
+3. **Include** - Replace `<div data-import>` tags with component content  
 4. **Replace** - Substitute data tokens with provided data
 5. **Bundle** - Combine CSS from components and layouts
 6. **Generate** - Create final HTML files and sitemap
@@ -110,7 +109,7 @@ Include reusable components with data:
 
 ```html
 <!-- Page specifies layout -->
-<body data-layout="/layouts/blog.html">
+<body data-import="/_includes/_blog.layout.html">
   <!-- This content becomes the unnamed slot -->
   <h2>My Blog Post</h2>
   <p>Post content here...</p>
@@ -121,7 +120,7 @@ Include reusable components with data:
 
 ```html
 <!-- Page defines slot content -->  
-<template target="sidebar">
+<template data-target="sidebar">
   <h3>Recent Posts</h3>
   <ul>...</ul>
 </template>

@@ -2,10 +2,10 @@
 title: About Giv
 ---
 
-<template slot="title">Giv – AI Git Assistant</template>
-<template slot="description">AI-powered commit messages, changelogs, and release notes.</template>
+<template data-target="title">Giv – AI Git Assistant</template>
+<template data-target="description">AI-powered commit messages, changelogs, and release notes.</template>
 
-<template slot="hero">
+<template data-target="hero">
   <h1 style="view-transition-name: giv-hero">Giv</h1>
   <p>Git workflows on autopilot. Never write commit messages again.</p>
 </template>
