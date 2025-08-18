@@ -68,7 +68,7 @@ Unify's layout system automatically finds the most appropriate layout for each p
 
 ### Layout Discovery Order
 
-1. **Explicit Override**: `data-layout` attribute (HTML) or `layout` frontmatter (Markdown)
+1. **Explicit Override**: `data-import` attribute (HTML) or `layout` frontmatter (Markdown)
 2. **Nearest Directory Layout**: Look for `_layout.html` in the page's directory
 3. **Parent Directory Layouts**: Climb up the directory tree
 4. **Global Fallback**: `src/_includes/layout.html`
@@ -252,9 +252,9 @@ title: Fwdslsh Developer Tools
 ---
 
 <!-- Slot projections using template elements -->
-<template slot="title">Fwdslsh Developer Tools</template>
-<template slot="description">Small, focused tools that ship fast.</template>
-<template slot="section">home</template>
+<template data-target="title">Fwdslsh Developer Tools</template>
+<template data-target="description">Small, focused tools that ship fast.</template>
+<template data-target="section">home</template>
 
 # Welcome to Fwdslsh.dev
 
@@ -284,15 +284,15 @@ We build small, focused developer tools that **do one thing well**.
 </div>
 
 <!-- Include reusable CTA component with custom content -->
-<include src="/_includes/cta.html">
-  <template slot="heading">Ship Today</template>
-  <template slot="copy">Use Unify to deploy in minutes.</template>
+<div data-import="/_includes/cta.html">
+  <template data-target="heading">Ship Today</template>
+  <template data-target="copy">Use Unify to deploy in minutes.</template>
 </include>
 ```
 
 ### Understanding Template Projection
 
-**`<template slot="...">`**: Content is hidden in raw view and projected into matching slots during build
+**`<template data-target="...">`**: Content is hidden in raw view and projected into matching slots during build
 **`view-transition-name`**: Enables element morphing between pages for smooth animations
 **`<include>`**: Pulls in reusable components with customizable slot content
 
@@ -306,11 +306,11 @@ title: About Unify
 # Layout automatically discovered at src/unify/_layout.html
 ---
 
-<template slot="title">Unify – Static Site Generator</template>
-<template slot="description">Build sites with layouts, slots, and includes—no frameworks.</template>
+<template data-target="title">Unify – Static Site Generator</template>
+<template data-target="description">Build sites with layouts, slots, and includes—no frameworks.</template>
 
 <!-- Custom hero content replaces default -->
-<template slot="hero">
+<template data-target="hero">
   <h1 style="view-transition-name: unify-hero">Unify</h1>
   <p>Static sites that ship. No build step hell, no framework lock‑in.</p>
 </template>
@@ -341,7 +341,7 @@ Static site generators became more complex than the sites they build. Unify fixe
 title: Unify – Getting Started
 ---
 
-<template slot="title">Unify – Getting Started</template>
+<template data-target="title">Unify – Getting Started</template>
 
 ## Installation
 
@@ -461,7 +461,7 @@ For element morphing between pages, use matching `view-transition-name` values:
 **HTML Pages**: Use `data-layout` on the root element
 ```html
 <body>
-  <template slot="title">Special Page</template>
+  <template data-target="title">Special Page</template>
   <h1>This uses the global layout instead of section layout</h1>
 </body>
 ```
@@ -471,7 +471,7 @@ For element morphing between pages, use matching `view-transition-name` values:
 ---
 layout: "/_includes/_layout.html"
 ---
-<template slot="title">Override Example</template>
+<template data-target="title">Override Example</template>
 
 # This page uses the global layout
 ```
@@ -480,7 +480,7 @@ layout: "/_includes/_layout.html"
 
 **Layout Resolution**: Open layout files directly in browser to see fallback content from `<slot>` elements
 
-**Template Behavior**: In raw page view, `<template slot="...">` content is hidden (inert), while regular slotted content is visible
+**Template Behavior**: In raw page view, `<template data-target="...">` content is hidden (inert), while regular slotted content is visible
 
 **Build Output**: Generated HTML flattens the slot/template structure—templates are removed and content appears in slot positions
 
@@ -575,7 +575,7 @@ Use `--pretty-urls` for clean, hierarchical URLs:
 unify build --base-url https://yoursite.com
 
 # Custom meta descriptions per page
-<template slot="description">Page-specific description</template>
+<template data-target="description">Page-specific description</template>
 ```
 
 ### Performance Benefits

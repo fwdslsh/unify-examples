@@ -2,8 +2,8 @@
 title: Catalog – Documentation
 ---
 
-<template slot="title">Catalog – Documentation</template>
-<template slot="description">Complete reference for content cataloging and organization.</template>
+<template data-target="title">Catalog – Documentation</template>
+<template data-target="description">Complete reference for content cataloging and organization.</template>
 
 ## Documentation Overview
 

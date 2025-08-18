@@ -2,10 +2,10 @@
 title: About Inform
 ---
 
-<template slot="title">Inform – Web Content Crawler</template>
-<template slot="description">High-performance web crawler that converts sites to clean Markdown.</template>
+<template data-target="title">Inform – Web Content Crawler</template>
+<template data-target="description">High-performance web crawler that converts sites to clean Markdown.</template>
 
-<template slot="hero">
+<template data-target="hero">
   <h1 style="view-transition-name: inform-hero">Inform</h1>
   <p>Convert websites to Markdown in minutes. Fast crawl → clean docs.</p>
 </template>

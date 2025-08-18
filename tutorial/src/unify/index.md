@@ -2,10 +2,10 @@
 title: About Unify
 ---
 
-<template slot="title">Unify – Static Site Generator</template>
-<template slot="description">Build sites with layouts, slots, and includes—no frameworks.</template>
+<template data-target="title">Unify – Static Site Generator</template>
+<template data-target="description">Build sites with layouts, slots, and includes—no frameworks.</template>
 
-<template slot="hero">
+<template data-target="hero">
   <h1 style="view-transition-name: unify-hero">Unify</h1>
   <p>Static sites that ship. No build step hell, no framework lock‑in.</p>
 </template>

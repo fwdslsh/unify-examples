@@ -2,8 +2,8 @@
 title: Giv – Getting Started
 ---
 
-<template slot="title">Giv – Getting Started</template>
-<template slot="description">Start using AI for your Git workflow in minutes.</template>
+<template data-target="title">Giv – Getting Started</template>
+<template data-target="description">Start using AI for your Git workflow in minutes.</template>
 
 ## Installation
 

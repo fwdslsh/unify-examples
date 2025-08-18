@@ -2,8 +2,8 @@
 title: Unify – Documentation
 ---
 
-<template slot="title">Unify – Documentation</template>
-<template slot="description">Complete reference for Unify's features and capabilities.</template>
+<template data-target="title">Unify – Documentation</template">
+<template data-target="description">Complete reference for Unify's features and capabilities.</template">
 
 ## Documentation Overview
 
@@ -51,23 +51,23 @@ Unify's templating uses standard web platform elements:
 
 **Slots** (`<slot>`): Define insertion points in layouts
 ```html
-<!-- Layout -->
-<title><slot name="title">Default Title</slot></title>
-<main><slot></slot></main>
+<!-- Layout --">
+<title><slot name="title">Default Title</slot></title">
+<main><slot></slot></main">
 ```
 
-**Templates** (`<template slot="name">`): Provide content for named slots
+**Templates** (`<template data-target="name">`): Provide content for named slots
 ```html
-<!-- Page -->
-<template slot="title">Custom Page Title</template>
-<h1>Page content goes in default slot</h1>
+<!-- Page --">
+<template data-target="title">Custom Page Title</template">
+<h1>Page content goes in default slot</h1">
 ```
 
 **Includes** (`<include>`): Pull in reusable components
 ```html
-<include src="/_includes/_header.html">
-  <template slot="title">Page-specific title</template>
-</include>
+<div data-import="/_includes/_header.html"">
+  <template data-target="title">Page-specific title</template">
+</include">
 ```
 
 ### File Processing Rules
@@ -144,19 +144,19 @@ Create reusable components with slots:
 ```html
 <a href="<slot name='href'>#</slot>" 
    class="<slot name='class'>button</slot>"
-   <slot name='attr'></slot>>
-  <slot name="text">Button</slot>
-</a>
+   <slot name='attr'></slot>">
+  <slot name="text">Button</slot">
+</a">
 ```
 
 **Usage:**
 ```html
-<include src="/_includes/_button.html">
-  <template slot="href">/signup/</template>
-  <template slot="text">Join Now</template>
-  <template slot="class">button contrast</template>
-  <template slot="attr">data-umami="signup-click"</template>
-</include>
+<div data-import="/_includes/_button.html"">
+  <template data-target="href">/signup/</template">
+  <template data-target="text">Join Now</template">
+  <template data-target="class">button contrast</template">
+  <template data-target="attr">data-umami="signup-click"</template">
+</include">
 ```
 
 ### Modern CSS Integration
@@ -192,10 +192,10 @@ Create reusable components with slots:
 
 **HTML Pages:**
 ```html
-<html data-layout="/_includes/_special.html">
-  <template slot="title">Special Page</template>
-  <h1>Content</h1>
-</html>
+<html data-layout="/_includes/_special.html"">
+  <template data-target="title">Special Page</template">
+  <h1>Content</h1">
+</html">
 ```
 
 **Markdown Pages:**
@@ -205,7 +205,7 @@ title: Blog Post
 layout: "/blog/_post-layout.html"
 ---
 
-<template slot="title">{{ title }}</template>
+<template data-target="title">{{ title }}</template">
 
 # Blog Content
 ```
@@ -285,50 +285,50 @@ unify build \
 
 **Meta Tags:**
 ```html
-<!-- Layout head section -->
-<title><slot name="title">Site Name</slot></title>
-<meta name="description" content="<slot name='description'>Default description</slot>">
-<meta property="og:title" content="<slot name='og-title'><slot name='title'>Site Name</slot></slot>">
-<meta property="og:description" content="<slot name='og-description'><slot name='description'>Default description</slot></slot>">
+<!-- Layout head section --">
+<title><slot name="title">Site Name</slot></title">
+<meta name="description" content="<slot name='description'>Default description</slot>"">
+<meta property="og:title" content="<slot name='og-title'><slot name='title'>Site Name</slot></slot>"">
+<meta property="og:description" content="<slot name='og-description'><slot name='description'>Default description</slot></slot>"">
 ```
 
 **Page Usage:**
 ```markdown
-<template slot="title">Specific Page Title</template>
-<template slot="description">Specific page description for SEO</template>
-<template slot="og-title">Social Media Title</template>
+<template data-target="title">Specific Page Title</template">
+<template data-target="description">Specific page description for SEO</template">
+<template data-target="og-title">Social Media Title</template">
 ```
 
 ### Component Design Patterns
 
 **Flexible Components:**
 ```html
-<!-- _includes/_card.html -->
-<article class="card <slot name='class'></slot>">
-  <header>
-    <h3><slot name="title">Card Title</slot></h3>
-  </header>
-  <div class="content">
-    <slot></slot>
-  </div>
-  <footer>
-    <slot name="footer">
-      <a href="<slot name='link'>#</slot>">Learn More</a>
-    </slot>
-  </footer>
-</article>
+<!-- _includes/_card.html --">
+<article class="card <slot name='class'></slot>"">
+  <header">
+    <h3><slot name="title">Card Title</slot></h3">
+  </header">
+  <div class="content"">
+    <slot></slot">
+  </div">
+  <footer">
+    <slot name="footer"">
+      <a href="<slot name='link'>#</slot>">Learn More</a">
+    </slot">
+  </footer">
+</article">
 ```
 
 **Conditional Content:**
 ```html
-<!-- _includes/_banner.html -->
-<div class="banner <slot name='type'>info</slot>">
-  <slot name="icon">ℹ️</slot>
-  <div class="content">
-    <slot></slot>
-  </div>
-  <slot name="action"></slot>
-</div>
+<!-- _includes/_banner.html --">
+<div class="banner <slot name='type'>info</slot>"">
+  <slot name="icon">ℹ️</slot">
+  <div class="content"">
+    <slot></slot">
+  </div">
+  <slot name="action"></slot">
+</div">
 ```
 
 ## Troubleshooting
@@ -384,7 +384,7 @@ unify watch --verbose
 ### From Other Static Site Generators
 
 **From Jekyll:**
-- Replace `{% include %}` with `<include src="">`
+- Replace `{% include %}` with `<div data-import="">`
 - Convert `{{ site.title }}` to slot-based templates
 - Move `_layouts/` to use Unify's layout discovery
 
@@ -404,37 +404,37 @@ unify watch --verbose
 
 **Absolute paths** (start with `/`): Resolved from `src/` root
 ```html
-<include src="/_includes/_header.html">
+<div data-import="/_includes/_header.html"">
 ```
 
 **Relative paths**: Resolved relative to current file
 ```html
-<include src="_sidebar.html">
-<include src="../_shared/_button.html">
+<div data-import="_sidebar.html"">
+<div data-import="../_shared/_button.html"">
 ```
 
 ### Slot Composition
 
 **Named slots**: Content assigned by name
 ```html
-<slot name="title">Default title</slot>
-<template slot="title">Custom title</template>
+<slot name="title">Default title</slot">
+<template data-target="title">Custom title</template">
 ```
 
 **Default slot**: Receives content without slot attribute
 ```html
-<slot>Default content</slot>
-<h1>This goes to default slot</h1>
+<slot>Default content</slot">
+<h1>This goes to default slot</h1">
 ```
 
 **Multiple assignments**: Multiple elements can target same slot
 ```html
-<template slot="scripts">
-  <script src="analytics.js"></script>
-</template>
-<template slot="scripts">
-  <script src="app.js"></script>
-</template>
+<template data-target="scripts"">
+  <script src="analytics.js"></script">
+</template">
+<template data-target="scripts"">
+  <script src="app.js"></script">
+</template">
 ```
 
 ### Build Processing

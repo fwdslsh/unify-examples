@@ -2,8 +2,8 @@
 title: Inform – Documentation
 ---
 
-<template slot="title">Inform – Documentation</template>
-<template slot="description">Complete reference for web crawling and content extraction.</template>
+<template data-target="title">Inform – Documentation</template>
+<template data-target="description">Complete reference for web crawling and content extraction.</template>
 
 ## Documentation Overview
 

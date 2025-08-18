@@ -2,8 +2,8 @@
 title: Giv – Documentation
 ---
 
-<template slot="title">Giv – Documentation</template>
-<template slot="description">Complete reference for AI-powered Git workflows.</template>
+<template data-target="title">Giv – Documentation</template>
+<template data-target="description">Complete reference for AI-powered Git workflows.</template>
 
 ## Documentation Overview
 

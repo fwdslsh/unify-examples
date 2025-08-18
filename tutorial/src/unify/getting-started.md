@@ -2,8 +2,8 @@
 title: Unify – Getting Started
 ---
 
-<template slot="title">Unify – Getting Started</template>
-<template slot="description">Quick start guide for building your first Unify site.</template>
+<template data-target="title">Unify – Getting Started</template>
+<template data-target="description">Quick start guide for building your first Unify site.</template>
 
 ## Installation
 
@@ -57,7 +57,7 @@ cat > src/index.md << 'EOF'
 title: Welcome
 ---
 
-<template slot="title">Welcome to My Site</template>
+<template data-target="title">Welcome to My Site</template>
 
 # Hello World
 
@@ -200,8 +200,8 @@ Create `src/about.md`:
 title: About Us
 ---
 
-<template slot="title">About Us – My Site</template>
-<template slot="description">Learn more about our mission and team.</template>
+<template data-target="title">About Us – My Site</template>
+<template data-target="description">Learn more about our mission and team.</template>
 
 # About Us
 
@@ -227,10 +227,10 @@ Create reusable components in `_includes/`:
 
 **Use in pages**:
 ```html
-<include src="/_includes/_button.html">
-  <template slot="href">/contact/</template>
-  <template slot="text">Get in Touch</template>
-  <template slot="class">button contrast</template>
+<div data-import="/_includes/_button.html">
+  <template data-target="href">/contact/</template>
+  <template data-target="text">Get in Touch</template>
+  <template data-target="class">button contrast</template>
 </include>
 ```
 

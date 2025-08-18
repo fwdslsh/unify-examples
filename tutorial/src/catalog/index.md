@@ -2,10 +2,10 @@
 title: About Catalog
 ---
 
-<template slot="title">Catalog – Content Index Generator</template>
-<template slot="description">Generate structured content catalogs for AI workflows and documentation systems.</template>
+<template data-target="title">Catalog – Content Index Generator</template>
+<template data-target="description">Generate structured content catalogs for AI workflows and documentation systems.</template>
 
-<template slot="hero">
+<template data-target="hero">
   <h1 style="view-transition-name: catalog-hero">Catalog</h1>
   <p>Organize docs for AI agents. Transform directories into searchable catalogs.</p>
 </template>

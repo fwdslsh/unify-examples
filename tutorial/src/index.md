@@ -3,9 +3,9 @@ title: Fwdslsh Developer Tools
 layout: "/_includes/layout.html"
 ---
 
-<template slot="title">Fwdslsh Developer Tools</template>
-<template slot="description">Small, focused tools that ship fast.</template>
-<template slot="section">home</template>
+<template data-target="title">Fwdslsh Developer Tools</template>
+<template data-target="description">Small, focused tools that ship fast.</template>
+<template data-target="section">home</template>
 
 # Welcome to Fwdslsh.dev
 
@@ -34,7 +34,7 @@ We build small, focused developer tools that **do one thing well**.
   </article>
 </div>
 
-<include src="/_includes/_cta.html">
-  <template slot="heading">Ship Today</template>
-  <template slot="copy">Use Unify to deploy in minutes.</template>
+<div data-import="/_includes/_cta.html">
+  <template data-target="heading">Ship Today</template>
+  <template data-target="copy">Use Unify to deploy in minutes.</template>
 </include>
